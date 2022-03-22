@@ -29,5 +29,11 @@
   },
   "dependencies": {
     "axios": "^0.26.1"
+  },
+  "homepage": "https://github.com/RinseV/coop-wrapper",
+  "bugs": "https://github.com/RinseV/coop-wrapper/issues",
+  "repository": {
+    "url": "https://github.com/RinseV/coop-wrapper",
+    "type": "git"
   }
 }
