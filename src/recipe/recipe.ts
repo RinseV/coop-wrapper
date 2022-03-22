@@ -9,7 +9,7 @@ export interface SingleRecipeOptions {
 
 export interface RecipeOptions extends PaginationOptions {
     prioritized?: boolean;
-    sort: RecipeSortOptions;
+    sort?: RecipeSortOptions;
 }
 
 export class Recipe extends CoopObject {

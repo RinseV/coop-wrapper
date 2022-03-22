@@ -51,7 +51,7 @@ export interface RecipeModel {
 
 export interface RecipeIngredientModel {
     id: number;
-    name?: any;
+    name?: unknown;
     amount: number;
     unit_name_singular: string;
     unit_name_plural: string;
