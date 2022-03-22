@@ -46,7 +46,7 @@ describe('Coop Recipe', () => {
             await client.recipe().getRecipesFromName('test');
             expect(getMock).toHaveBeenCalledWith('-;loc=nl_NL;cur=EUR/recipes/search', {
                 query: {
-                    searchTerm: 'test',
+                    searchterm: 'test',
                     prioritized: 'true',
                     items_per_page: '10',
                     page: '1',
@@ -67,7 +67,7 @@ describe('Coop Recipe', () => {
             });
             expect(getMock).toHaveBeenCalledWith('-;loc=nl_NL;cur=EUR/recipes/search', {
                 query: {
-                    searchTerm: 'test',
+                    searchterm: 'test',
                     prioritized: 'false',
                     items_per_page: '5',
                     page: '5',
