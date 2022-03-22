@@ -1,0 +1,17 @@
+src
+.eslintrc
+.eslintrc.js
+.gitignore
+.npmignore
+.prettierrc
+yarn-error.log
+node_modules/
+tsconfig.json
+rollup.config.ts
+.nvmrc
+.gitattributes
+coverage
+test
+jest.config.ts
+.github
+*.tgz
