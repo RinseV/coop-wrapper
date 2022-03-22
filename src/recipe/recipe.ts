@@ -1,6 +1,6 @@
 import { CoopObject, PaginationOptions } from '../base/coopObject';
 import { AdditionalRequestOptions } from '../coop';
-import { RecipeQueryModel, SingleRecipeModel } from './recipeModel';
+import { RecipeQueryModel, RecipeIngredientModel } from './recipeModel';
 
 export interface SingleRecipeOptions {
     persons?: number;
@@ -14,17 +14,17 @@ export interface RecipeOptions extends PaginationOptions {
 
 export class Recipe extends CoopObject {
     /**
-     * Get recipe from given recipe ID
+     * Gets ingredients from recipe ID
      * @param recipeId Recipe ID (5 digits)
      * @param options Query options
      * @param options.persons Amount of persons (default 1)
      * @param options.primary Default true
      */
-    async getRecipeFromId(
+    async getIngredientsFromRecipe(
         recipeId: number,
         options?: SingleRecipeOptions,
         additionalRequestOptions?: AdditionalRequestOptions
-    ): Promise<SingleRecipeModel> {
+    ): Promise<RecipeIngredientModel[]> {
         return await this.coop.get(`-;loc=nl_NL;cur=EUR/recipes/${recipeId}/ingredients`, {
             query: {
                 persons: (options?.persons ?? 1).toString(),
@@ -50,7 +50,7 @@ export class Recipe extends CoopObject {
     ): Promise<RecipeQueryModel> {
         return await this.coop.get('-;loc=nl_NL;cur=EUR/recipes/search', {
             query: {
-                searchTerm: recipeName,
+                searchterm: recipeName,
                 prioritized: (options?.prioritized ?? true).toString(),
                 items_per_page: (options?.amount ?? 10).toString(),
                 page: (options?.offset ?? 1).toString(),

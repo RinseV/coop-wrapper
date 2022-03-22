@@ -49,7 +49,7 @@ export interface RecipeModel {
     updated_timestamp: number;
 }
 
-export interface SingleRecipeModel {
+export interface RecipeIngredientModel {
     id: number;
     name?: any;
     amount: number;
