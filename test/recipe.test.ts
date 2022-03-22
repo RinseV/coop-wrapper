@@ -7,12 +7,12 @@ describe('Coop Recipe', () => {
         expect(client.recipe()).toBeInstanceOf(Recipe);
     });
 
-    describe('getRecipeFromId', () => {
+    describe('getIngredientsFromRecipe', () => {
         it('should have been called with default parameters', async () => {
             const client = new Coop();
             const getMock = jest.spyOn(client, 'get');
             getMock.mockImplementation(() => Promise.resolve({}));
-            await client.recipe().getRecipeFromId(1);
+            await client.recipe().getIngredientsFromRecipe(1);
             expect(getMock).toHaveBeenCalledWith('-;loc=nl_NL;cur=EUR/recipes/1/ingredients', {
                 query: {
                     persons: '1',
@@ -25,7 +25,7 @@ describe('Coop Recipe', () => {
             const client = new Coop();
             const getMock = jest.spyOn(client, 'get');
             getMock.mockImplementation(() => Promise.resolve({}));
-            await client.recipe().getRecipeFromId(1, {
+            await client.recipe().getIngredientsFromRecipe(1, {
                 persons: 2,
                 primary: false
             });
